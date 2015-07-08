@@ -1,0 +1,64 @@
+# Project: Parcial1
+# Makefile created by Dev-C++ 5.5.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o inicializarVector.o altas.o ingresoDeDatos.o validaciones.o modificar.o baja.o informar.o listar.o alquilar.o devolucion.o estado.o Archvos.o
+LINKOBJ  = main.o inicializarVector.o altas.o ingresoDeDatos.o validaciones.o modificar.o baja.o informar.o listar.o alquilar.o devolucion.o estado.o Archvos.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.7.2/include/c++"
+BIN      = Parcial1.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+inicializarVector.o: inicializarVector.c
+	$(CC) -c inicializarVector.c -o inicializarVector.o $(CFLAGS)
+
+altas.o: altas.c
+	$(CC) -c altas.c -o altas.o $(CFLAGS)
+
+ingresoDeDatos.o: ingresoDeDatos.c
+	$(CC) -c ingresoDeDatos.c -o ingresoDeDatos.o $(CFLAGS)
+
+validaciones.o: validaciones.c
+	$(CC) -c validaciones.c -o validaciones.o $(CFLAGS)
+
+modificar.o: modificar.c
+	$(CC) -c modificar.c -o modificar.o $(CFLAGS)
+
+baja.o: baja.c
+	$(CC) -c baja.c -o baja.o $(CFLAGS)
+
+informar.o: informar.c
+	$(CC) -c informar.c -o informar.o $(CFLAGS)
+
+listar.o: listar.c
+	$(CC) -c listar.c -o listar.o $(CFLAGS)
+
+alquilar.o: alquilar.c
+	$(CC) -c alquilar.c -o alquilar.o $(CFLAGS)
+
+devolucion.o: devolucion.c
+	$(CC) -c devolucion.c -o devolucion.o $(CFLAGS)
+
+estado.o: estado.c
+	$(CC) -c estado.c -o estado.o $(CFLAGS)
+
+Archvos.o: Archvos.c
+	$(CC) -c Archvos.c -o Archvos.o $(CFLAGS)
